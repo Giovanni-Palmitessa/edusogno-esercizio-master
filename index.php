@@ -1,3 +1,20 @@
+<?php
+require_once 'assets/db/database.php';
+
+$migrationsFile = 'assets/db/Migrations.sql';  
+
+$migrationsSql = file_get_contents($migrationsFile);
+
+if (mysqli_multi_query($conn, $migrationsSql)) {
+    do {
+        // Processa i risultati di ogni query (se necessario)
+    } while (mysqli_next_result($conn));
+    echo 'Migrazione completata con successo!';
+} else {
+    echo 'Errore nella migrazione: ' . mysqli_error($conn);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
