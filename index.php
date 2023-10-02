@@ -9,7 +9,6 @@ if (mysqli_multi_query($conn, $migrationsSql)) {
     do {
         // Processa i risultati di ogni query (se necessario)
     } while (mysqli_next_result($conn));
-    echo 'Migrazione completata con successo!';
 } else {
     echo 'Errore nella migrazione: ' . mysqli_error($conn);
 }
