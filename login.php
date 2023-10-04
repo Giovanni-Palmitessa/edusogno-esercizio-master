@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             // Credenziali corrette, effettua il login
             $_SESSION['user_id'] = $user['id'];
-            header('Location: profile.php'); // Reindirizza alla pagina del profilo
+            header('Location: home.php'); // Reindirizza alla pagina home
             exit();
         } else {
             $error = "Credenziali errate. Riprova.";
