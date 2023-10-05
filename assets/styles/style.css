@@ -19,6 +19,12 @@ nav img {
   height: 100%;
 }
 
+main {
+  background-image: url("../flying-rocket.jpg");
+  background-size: cover;
+  height: calc(100vh - 150px);
+}
+
 h1 {
   text-align: center;
   padding-top: 15rem;
