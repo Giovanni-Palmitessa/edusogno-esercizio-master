@@ -25,12 +25,26 @@ if ($result_user) {
 
 // Recupera gli eventi ai quali partecipa l'utente
 $email = $_SESSION['user_email']; // Recupera l'email dell'utente
-$query_events = "SELECT nome_evento FROM eventi WHERE FIND_IN_SET('$email', attendees)";
+$query_events = "SELECT id, nome_evento, data_evento FROM eventi WHERE FIND_IN_SET('$email', attendees)";
 $result_events = mysqli_query($conn, $query_events);
 
 $events = array();
 while ($row = mysqli_fetch_assoc($result_events)) {
-    $events[] = $row['nome_evento'];
+    $events[] = $row;
+}
+
+if (!empty($events)) {
+    echo '<h2>Your Events:</h2>';
+    echo '<ul>';
+    foreach ($events as $event) {
+        echo '<li>' . $event['nome_evento'] . ' - ' . $event['data_evento'] . ' - ';
+        echo '<a href="edit_event.php?id=' . $event['id'] . '">Edit</a> | ';
+        echo '<a href="delete_event.php?id=' . $event['id'] . '">Delete</a>';
+        echo '</li>';
+    }
+    echo '</ul>';
+} else {
+    echo '<p>You are not registered for any events.</p>';
 }
 ?>
 
@@ -45,11 +59,7 @@ while ($row = mysqli_fetch_assoc($result_events)) {
 <body>
     <h1>Welcome, <?php echo $first_name . ' ' . $last_name; ?></h1>
 
-    <h2>Your Events:</h2>
-    <ul>
-        <?php foreach ($events as $event) { ?>
-            <li><?php echo $event; ?></li>
-        <?php } ?>
-    </ul>
+    <a href="events.php">Vai agli Eventi</a>
+
 </body>
 </html>

@@ -15,11 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             // Credenziali corrette, effettua il login
             $_SESSION['user_id'] = $user['id'];
-            header('Location: home.php'); // Reindirizza alla pagina home
+            $_SESSION['user_email'] = $user['email']; // Imposta l'email dell'utente
+            header('Location: home.php'); // Reindirizza alla pagina home.php
             exit();
         } else {
             $error = "Credenziali errate. Riprova.";
         }
+        
     } else {
         $error = "Errore nella query: " . mysqli_error($conn);
     }
