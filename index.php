@@ -14,10 +14,14 @@
         <img src="assets/logo-black.svg" alt="Edusogno">
     </nav>
 
-    <h1>Benvenuto</h1>
-    <a href="login.php">Sei già un utente? Accedi qui!</a>
+    <h1>Benvenuto in Edusogno</h1>
 
-    <a href="register.php">Non sei ancora registrato? Registrati qui!</a>
+    <div class="links">
+        <a href="login.php">Sei già un utente? Accedi qui!</a>
+
+        <a href="register.php">Non sei ancora registrato? Registrati qui!</a>
+    </div>
+    
 </body>
 
 </html>
