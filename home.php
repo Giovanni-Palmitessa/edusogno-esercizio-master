@@ -59,7 +59,7 @@ if (!empty($events)) {
 <body>
     <h1>Welcome, <?php echo $first_name . ' ' . $last_name; ?></h1>
 
-    <a href="events.php">Vai agli Eventi</a>
+    <a href="newEvent.php">Aggiungi un evento</a>
 
 </body>
 </html>
