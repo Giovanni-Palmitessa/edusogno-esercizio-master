@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($insert_result) {
             // Registrazione riuscita
+            include 'migrate_database.php'; // Esegui la migrazione del database
             header('Location: login.php'); // Reindirizza alla pagina di login
             exit();
         } else {

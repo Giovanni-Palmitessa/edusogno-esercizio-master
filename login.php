@@ -50,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" id="password" name="password" required><br><br>
 
         <input type="submit" value="Login">
+
+        <a href="register.php">Non Hai un account? Registrati</a>
     </form>
 </body>
 </html>
