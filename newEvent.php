@@ -29,8 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $success_message = 'Evento aggiunto con successo.';
         $nome_evento = $data_evento = ''; // Resetta i campi del modulo dopo l'inserimento
     
-        // Effettua il reindirizzamento alla home dopo un breve ritardo (ad esempio, 2 secondi)
-        header('Refresh: 2; URL=home.php');
+        // Effettua il reindirizzamento alla home
+        echo 'Evento inserito con successo.';
+
+        header('Refresh: 0.5; URL=home.php');
         exit();
     } else {
         $error = 'Errore durante l\'inserimento dell\'evento: ' . mysqli_error($conn);
@@ -46,24 +48,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aggiungi un Evento</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/registerLoginStyle.css">
 </head>
 <body>
-    <h1>Aggiungi un Evento</h1>
-    
-    <!-- Mostra eventuali messaggi di errore o successo -->
-    <?php if (!empty($error)) { echo '<p>' . $error . '</p>'; } ?>
-    <?php if (!empty($success_message)) { echo '<p>' . $success_message . '</p>'; } ?>
+    <nav>
+        <img src="assets/logo-black.svg" alt="Edusogno">
+    </nav>
 
-    <form method="POST">
-        <label for="nome_evento">Nome dell'evento:</label>
-        <input type="text" id="nome_evento" name="nome_evento" value="<?php echo $nome_evento; ?>" required><br>
+    <main>
+        <h1>Aggiungi un Evento</h1>
 
-        <label for="data_evento">Data dell'evento:</label>
-        <input type="datetime-local" id="data_evento" name="data_evento" value="<?php echo $data_evento; ?>" required><br>
+        <div class="content">
+            <div class="card">
+                <!-- Mostra eventuali messaggi di errore o successo -->
+                <?php if (!empty($error)) { echo '<p>' . $error . '</p>'; } ?>
+                <?php if (!empty($success_message)) { echo '<p>' . $success_message . '</p>'; } ?>
 
-        <input type="submit" value="Aggiungi Evento">
-    </form>
+                <form method="POST">
+                    <div class="inputs">
+                        <div class="input">
+                            <label for="nome_evento">Nome dell'evento:</label>
+                            <input type="text" id="nome_evento" name="nome_evento" value="<?php echo $nome_evento; ?>" required>
+                        </div>
 
-    <a href="home.php">Torna alla Home</a>
+                        <div class="input">
+                            <label for="data_evento">Data dell'evento:</label>
+                            <input type="datetime-local" id="data_evento" name="data_evento" value="<?php echo $data_evento; ?>" required>
+                        </div>
+
+                        <input type="submit" value="Aggiungi Evento" class="submit">
+
+                        <a href="home.php">Torna alla Home</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
