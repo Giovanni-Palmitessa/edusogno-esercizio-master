@@ -55,10 +55,15 @@ if (!empty($events)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edusogno - Home</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/homeStyle.css">
 </head>
 <body>
-    <h1>Welcome, <?php echo $first_name . ' ' . $last_name; ?></h1>
+    <nav>
+        <img src="assets/logo-black.svg" alt="Edusogno">
+    </nav>
+
+    <h1>Ciao, <?php echo $first_name; ?> ecco i tuoi eventi</h1>
 
     <a href="newEvent.php">Aggiungi un evento</a>
 
