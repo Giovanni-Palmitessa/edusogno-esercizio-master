@@ -81,6 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>  
 
                         <input type="submit" value="REGISTRATI" class="submit">
+
+                        <a href="login.php">Sei già registrato? Vai al Login!</a>
                     </div>
                 </form>
             </div>

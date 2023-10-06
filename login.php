@@ -35,23 +35,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edusogno - Login</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/registerStyle.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <?php if (isset($error)) { ?>
-        <p style="color: red;"><?php echo $error; ?></p>
-    <?php } ?>
+    <nav>
+        <img src="assets/logo-black.svg" alt="Edusogno">
+    </nav>
 
-    <form method="POST" action="login.php">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+    <main>
+        <h1>Login</h1>
+        <div class="content">
+            <div class="card">
+                <?php if (isset($error)) { ?>
+                <p style="color: red;"><?php echo $error; ?></p>
+                <?php } ?>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+                <form method="POST">
+                    <div class="inputs">
+                        <div class="input">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-        <input type="submit" value="Login">
+                        <div class="input">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
 
-        <a href="register.php">Non Hai un account? Registrati</a>
-    </form>
+                        <input type="submit" value="LOGIN" class="submit">
+
+                        <a href="register.php">Non Hai un account? Registrati</a>
+                    </div>                 
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
