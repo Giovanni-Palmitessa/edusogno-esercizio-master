@@ -62,22 +62,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="inputs">
                         <div class="input">
                             <label for="first_name">Nome:</label>
-                            <input type="text" id="first_name" name="first_name" required>
+                            <input type="text" id="first_name" name="first_name" placeholder="Mario" required>
                         </div>
 
                         <div class="input">
                             <label for="last_name">Cognome:</label>
-                            <input type="text" id="last_name" name="last_name" required>
+                            <input type="text" id="last_name" name="last_name" placeholder="Rossi" required>
                         </div>
 
                         <div class="input">
                             <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
                         </div>
 
                         <div class="input">
                             <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" required>
+                            <input type="password" id="password" name="password" placeholder="Scrivila qui" required>
                         </div>  
 
                         <input type="submit" value="REGISTRATI" class="submit">
