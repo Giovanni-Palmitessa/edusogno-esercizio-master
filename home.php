@@ -52,21 +52,24 @@ while ($row = mysqli_fetch_assoc($result_events)) {
     <main>
         <h1>Ciao, <?php echo $first_name; ?> ecco i tuoi eventi</h1>
 
-        <?php 
+        <div class="event-cards">
+            <?php
             if (!empty($events)) {
-                echo '<h2>Your Events:</h2>';
-                echo '<ul>';
                 foreach ($events as $event) {
-                    echo '<li>' . $event['nome_evento'] . ' - ' . $event['data_evento'] . ' - ';
-                    echo '<a href="edit_event.php?id=' . $event['id'] . '">Edit</a> | ';
-                    echo '<a href="delete_event.php?id=' . $event['id'] . '">Delete</a>';
-                    echo '</li>';
+                    echo '<div class="event-card">';
+                    echo '<h2>' . $event['nome_evento'] . '</h2>';
+                    echo '<p>' . $event['data_evento'] . '</p>';
+                    echo '<div class="btns">';
+                    echo '<a class="edit-button" href="edit_event.php?id=' . $event['id'] . '">Modifica</a>';
+                    echo '<a class="delete-button" href="delete_event.php?id=' . $event['id'] . '">Cancella</a>';
+                    echo '</div>';
+                    echo '</div>';
                 }
-                echo '</ul>';
             } else {
                 echo '<p class="message">Non sei registrato per nessun evento. Creane uno nuovo!</p>';
             }
-        ?>
+            ?>
+        </div>
 
         <div class="link">
             <a href="newEvent.php" class="addEvent">Aggiungi un evento</a>

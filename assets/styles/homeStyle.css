@@ -13,7 +13,63 @@ h1 {
 }
 
 main {
-  height: calc(100vh - 150px);
+  height: 100%;
+}
+
+/* Stili per le card degli eventi */
+.event-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.event-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-top: 3rem;
+  overflow: hidden; /* Nasconde il testo in eccesso */
+  max-width: 300px; /* Limita la larghezza massima */
+}
+
+.event-card h2 {
+  font-size: 2rem;
+  margin: 0;
+  white-space: nowrap; /* Impedisce il wrapping del testo */
+  overflow: hidden; /* Nasconde il testo in eccesso */
+  text-overflow: ellipsis; /* Aggiunge i tre puntini quando il testo supera la larghezza */
+}
+
+.event-card p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: gray;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit-button,
+.delete-button {
+  display: inline-block;
+  font-weight: 600;
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #0056b3;
 }
 
 .link {
@@ -27,4 +83,5 @@ main {
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
+  margin: 20rem 0 2rem 0;
 }
