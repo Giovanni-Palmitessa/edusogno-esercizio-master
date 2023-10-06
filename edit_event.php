@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
         if ($result_update) {
             echo 'Modifica effettuata con successo.';
             
-            header('Refresh: 2; URL=home.php');
+            header('Refresh: 0.5; URL=home.php');
             exit();
         } else {
             echo 'Errore nella modifica dell\'evento: ' . mysqli_error($conn);
@@ -46,18 +46,36 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Event</title>
+    <title>Edusogno - Modifica</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/registerLoginStyle.css">
 </head>
 <body>
-    <h1>Edit Event</h1>
-    <form method="POST">
-        <label for="nome_evento">Nome dell'evento:</label>
-        <input type="text" id="nome_evento" name="nome_evento" value="<?php echo $nome_evento; ?>" required><br>
+    <nav>
+        <img src="assets/logo-black.svg" alt="Edusogno">
+    </nav>
 
-        <label for="data_evento">Data dell'evento:</label>
-        <input type="datetime-local" id="data_evento" name="data_evento" value="<?php echo date('Y-m-d\TH:i', strtotime($data_evento)); ?>" required><br>
+    <main>
+        <h1>Modifica Evento</h1>
+        <div class="content">
+            <div class="card">
+                <form method="POST">
+                    <div class="inputs">
+                        <div class="input">
+                            <label for="nome_evento">Nome dell'evento:</label>
+                            <input type="text" id="nome_evento" name="nome_evento" value="<?php echo $nome_evento; ?>" required>
+                        </div>
 
-        <input type="submit" value="Salva Modifiche">
-    </form>
+                        <div class="input">
+                            <label for="data_evento">Data dell'evento:</label>
+                            <input type="datetime-local" id="data_evento" name="data_evento" value="<?php echo date('Y-m-d\TH:i', strtotime($data_evento)); ?>" required>
+                        </div>
+
+                        <input type="submit" value="Salva Modifiche" class="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
