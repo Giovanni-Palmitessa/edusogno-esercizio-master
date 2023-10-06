@@ -59,19 +59,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php } ?>
 
                 <form method="POST">
-                    <label for="first_name">Nome:</label>
-                    <input type="text" id="first_name" name="first_name" required><br><br>
+                    <div class="inputs">
+                        <div class="input">
+                            <label for="first_name">Nome:</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
 
-                    <label for="last_name">Cognome:</label>
-                    <input type="text" id="last_name" name="last_name" required><br><br>
+                        <div class="input">
+                            <label for="last_name">Cognome:</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required><br><br>
+                        <div class="input">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required><br><br>
+                        <div class="input">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>  
 
-                    <input type="submit" value="Registrati" class="submit">
+                        <input type="submit" value="Registrati" class="submit">
+                    </div>
                 </form>
             </div>
         </div>

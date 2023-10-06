@@ -17,10 +17,24 @@ h1 {
   padding: 6rem;
   margin-top: 2rem;
   font-size: 1.1rem;
+  width: 700px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 input {
   padding: 10px;
+  border-radius: 8px;
 }
 
 .submit {
@@ -31,4 +45,5 @@ input {
   font-weight: 700;
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
