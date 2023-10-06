@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <input type="password" id="password" name="password" required>
                         </div>  
 
-                        <input type="submit" value="Registrati" class="submit">
+                        <input type="submit" value="REGISTRATI" class="submit">
                     </div>
                 </form>
             </div>
