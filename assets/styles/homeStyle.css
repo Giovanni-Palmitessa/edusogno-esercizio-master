@@ -4,3 +4,23 @@ h1 {
   font-size: 2.5rem;
   color: #134077;
 }
+
+.message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.addEvent {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}

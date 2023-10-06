@@ -24,7 +24,6 @@ nav img {
 main {
   background-image: url("../flying-rocket.jpg");
   background-size: cover;
-  height: calc(100vh - 150px);
   position: relative;
   padding-top: 20px;
 }
