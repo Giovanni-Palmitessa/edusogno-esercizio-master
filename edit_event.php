@@ -72,6 +72,8 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <input type="submit" value="Salva Modifiche" class="submit">
+
+                        <a href="home.php">Torna alla Home</a>
                     </div>
                 </form>
             </div>
