@@ -59,7 +59,8 @@ if (isset($_GET['id'])) {
         <h1>Modifica Evento</h1>
         <div class="content">
             <div class="card">
-                <form method="POST">
+            <div id="error" style="color: red; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;"></div>
+                <form method="POST" id="editForm" novalidate>
                     <div class="inputs">
                         <div class="input">
                             <label for="nome_evento">Nome dell'evento:</label>
@@ -79,5 +80,6 @@ if (isset($_GET['id'])) {
             </div>
         </div>
     </main>
+    <script src="assets/js/edit.js"></script>
 </body>
 </html>
