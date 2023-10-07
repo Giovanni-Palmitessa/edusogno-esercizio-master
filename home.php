@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_assoc($result_events)) {
     </nav>
 
     <main>
-        <h1>Ciao, <?php echo $first_name; ?> ecco i tuoi eventi</h1>
+        <h1>Ciao, <?php echo $first_name . ' ' . $last_name;?> ecco i tuoi eventi</h1>
 
         <div class="event-cards">
             <?php

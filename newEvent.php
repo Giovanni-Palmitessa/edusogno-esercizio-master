@@ -26,9 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result_insert = mysqli_query($conn, $insert_query);
 
     if ($result_insert) {
-        $success_message = 'Evento aggiunto con successo.';
         $nome_evento = $data_evento = ''; // Resetta i campi del modulo dopo l'inserimento
-    
         // Effettua il reindirizzamento alla home
         echo 'Evento inserito con successo.';
 
@@ -61,29 +59,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="content">
             <div class="card">
-                <!-- Mostra eventuali messaggi di errore o successo -->
                 <?php if (!empty($error)) { echo '<p>' . $error . '</p>'; } ?>
-                <?php if (!empty($success_message)) { echo '<p>' . $success_message . '</p>'; } ?>
+                <div id="error" style="color: red; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;"></div>
+                    <form method="POST" id="newEventForm" novalidate>
+                        <div class="inputs">
+                            <div class="input">
+                                <label for="nome_evento">Nome dell'evento:</label>
+                                <input type="text" id="nome_evento" name="nome_evento" value="<?php echo $nome_evento; ?>" required>
+                            </div>
 
-                <form method="POST">
-                    <div class="inputs">
-                        <div class="input">
-                            <label for="nome_evento">Nome dell'evento:</label>
-                            <input type="text" id="nome_evento" name="nome_evento" value="<?php echo $nome_evento; ?>" required>
+                            <div class="input">
+                                <label for="data_evento">Data dell'evento:</label>
+                                <input type="datetime-local" id="data_evento" name="data_evento" value="<?php echo $data_evento; ?>" required>
+                            </div>
+
+                            <input type="submit" value="Aggiungi Evento" class="submit">
+
+                            <a href="home.php">Torna alla Home</a>
                         </div>
-
-                        <div class="input">
-                            <label for="data_evento">Data dell'evento:</label>
-                            <input type="datetime-local" id="data_evento" name="data_evento" value="<?php echo $data_evento; ?>" required>
-                        </div>
-
-                        <input type="submit" value="Aggiungi Evento" class="submit">
-
-                        <a href="home.php">Torna alla Home</a>
-                    </div>
-                </form>
+                    </form>
             </div>
         </div>
     </main>
+    <script src="assets/js/newEvent.js"></script>
 </body>
 </html>
