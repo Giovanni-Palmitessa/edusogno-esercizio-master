@@ -55,10 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="content">
             <div class="card">
                 <?php if (isset($error)) { ?>
-                    <p style="color: red;"><?php echo $error; ?></p>
+                    <p id="error" style="color: red; font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem;"><?php echo $error; ?></p>
                 <?php } ?>
 
-                <form method="POST">
+                <form method="POST" id="registrationForm" novalidate>
                     <div class="inputs">
                         <div class="input">
                             <label for="first_name">Nome:</label>
@@ -88,6 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </main>
-    
+    <script src="assets/js/registration.js"></script>
 </body>
 </html>
