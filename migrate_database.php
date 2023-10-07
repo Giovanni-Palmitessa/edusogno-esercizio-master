@@ -18,6 +18,7 @@ if (mysqli_num_rows($table_check_result) == 0) {
         cognome VARCHAR(45),
         email VARCHAR(255),
         password VARCHAR(255),
+        reset_token VARCHAR(255) NULL,
         PRIMARY KEY (id)
     )";
 
