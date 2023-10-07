@@ -6,11 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $confirm_password = $_POST['confirm_password'];
     $token = $_POST['token'];
 
-    // Valida la nuova password
+    // Validazione nuova password
     if ($password !== $confirm_password) {
         $error = "Le password non corrispondono. Riprova.";
     } else {
-        // Verifica la validità del token
         $token = mysqli_real_escape_string($conn, $token);
         $query = "SELECT * FROM utenti WHERE reset_token = '$token'";
         $result = mysqli_query($conn, $query);
@@ -21,10 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Hash della nuova password
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            // Aggiorna la password e cancella il token di reset
             $update_query = "UPDATE utenti SET password = '$hashed_password', reset_token = NULL WHERE id = " . $user['id'];
             if (mysqli_query($conn, $update_query)) {
-                // Password reimpostata con successo, reindirizza l'utente alla pagina di login
                 header('Location: login.php');
                 exit();
             } else {
@@ -47,10 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="assets/styles/registerLoginStyle.css">
 </head>
 <body>
+    <!-- NAVBAR -->
     <nav>
         <img src="assets/logo-black.svg" alt="Edusogno">
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main>
         <h1>Reimposta Password</h1>
         <div class="content">
@@ -68,7 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
 
                         <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
-                        <!-- Includi il token di reset come campo nascosto -->
 
                         <input type="submit" value="Reimposta Password" class="submit">
                     </div>                 

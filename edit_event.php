@@ -1,10 +1,10 @@
 <?php
 require_once 'assets/db/database.php';
-// Verifica se l'ID dell'evento è fornito nella query string
+
 if (isset($_GET['id'])) {
     $event_id = $_GET['id'];
 
-    // Esegui una query per recuperare i dettagli dell'evento in base all'ID
+    // Si recuperano i dettagli dell'evento in base all'ID
     $query_event_details = "SELECT nome_evento, data_evento FROM eventi WHERE id = $event_id";
     $result_event_details = mysqli_query($conn, $query_event_details);
 
@@ -17,12 +17,11 @@ if (isset($_GET['id'])) {
         exit();
     }
 
-    // Se il modulo è stato inviato, elabora le modifiche
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $new_nome_evento = $_POST['nome_evento'];
         $new_data_evento = $_POST['data_evento'];
 
-        // Esegui una query per aggiornare i dettagli dell'evento
+        // Query per aggiornare dati evento
         $update_query = "UPDATE eventi SET nome_evento = '$new_nome_evento', data_evento = '$new_data_evento' WHERE id = $event_id";
         $result_update = mysqli_query($conn, $update_query);
 
@@ -51,10 +50,12 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="assets/styles/registerLoginStyle.css">
 </head>
 <body>
+    <!-- NAVBAR -->
     <nav>
         <img src="assets/logo-black.svg" alt="Edusogno">
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main>
         <h1>Modifica Evento</h1>
         <div class="content">

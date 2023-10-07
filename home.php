@@ -7,10 +7,9 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Includi il file di connessione al database
 require_once 'assets/db/database.php';
 
-// Recupera il nome e il cognome dell'utente
+// nome e il cognome dell'utente
 $user_id = $_SESSION['user_id'];
 $query_user = "SELECT nome, cognome FROM utenti WHERE id = $user_id";
 $result_user = mysqli_query($conn, $query_user);
@@ -23,8 +22,8 @@ if ($result_user) {
     $error = "Errore nella query dell'utente: " . mysqli_error($conn);
 }
 
-// Recupera gli eventi ai quali partecipa l'utente
-$email = $_SESSION['user_email']; // Recupera l'email dell'utente
+// gli eventi ai quali partecipa l'utente
+$email = $_SESSION['user_email'];
 $query_events = "SELECT id, nome_evento, data_evento FROM eventi WHERE FIND_IN_SET('$email', attendees)";
 $result_events = mysqli_query($conn, $query_events);
 
@@ -45,13 +44,15 @@ while ($row = mysqli_fetch_assoc($result_events)) {
     <link rel="stylesheet" href="assets/styles/homeStyle.css">
 </head>
 <body>
+    <!-- NAVBAR -->
     <nav>
         <img src="assets/logo-black.svg" alt="Edusogno">
     </nav>
-
+<!-- MAIN CONTENT -->
     <main>
         <h1>Ciao, <?php echo $first_name . ' ' . $last_name;?> ecco i tuoi eventi</h1>
 
+        <!-- CARD DEGLI EVENTI -->
         <div class="event-cards">
             <?php
             if (!empty($events)) {
@@ -71,11 +72,10 @@ while ($row = mysqli_fetch_assoc($result_events)) {
             ?>
         </div>
 
+        <!-- LINK AGGIUNTA EVENTO -->
         <div class="link">
             <a href="newEvent.php" class="addEvent">Aggiungi un evento</a>
         </div>
     </main>
-
-    
 </body>
 </html>

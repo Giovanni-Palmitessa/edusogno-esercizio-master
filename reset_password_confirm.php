@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="assets/styles/registerLoginStyle.css">
 </head>
 <body>
+    <!-- NAVBAR -->
     <nav>
         <img src="assets/logo-black.svg" alt="Edusogno">
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main style="height: calc(100vh - 150px);">
     <h1 style="margin-bottom: 2rem;">Conferma Reset Password</h1>
 

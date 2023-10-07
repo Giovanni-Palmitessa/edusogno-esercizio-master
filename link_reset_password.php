@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="assets/styles/registerLoginStyle.css">
 </head>
 <body>
+    <!-- navbar -->
     <nav>
         <img src="assets/logo-black.svg" alt="Edusogno">
     </nav>
 
+    <!-- main content -->
     <main>
         <h1>Reset Password</h1>
         <div class="content">

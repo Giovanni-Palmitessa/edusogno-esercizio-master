@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   editForm.addEventListener("submit", function (event) {
     let valid = true;
-    errorField.innerHTML = ""; // Pulisce eventuali messaggi di errore precedenti
+    errorField.innerHTML = "";
 
     // Validazione del nome dell'evento
     if (nomeEventoField.value.trim() === "") {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (!valid) {
-      event.preventDefault(); // Impedisce l'invio del modulo se ci sono errori
+      event.preventDefault();
     }
   });
 });

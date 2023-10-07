@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   registrationForm.addEventListener("submit", function (event) {
     let valid = true;
-    errorField.innerHTML = ""; // Pulisce eventuali messaggi di errore precedenti
+    errorField.innerHTML = "";
 
     // Validazione dell'email
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (!valid) {
-      event.preventDefault(); // Impedisce l'invio del modulo se ci sono errori
+      event.preventDefault();
     }
   });
 });

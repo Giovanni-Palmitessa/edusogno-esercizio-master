@@ -11,10 +11,12 @@
 </head>
 
 <body>
+    <!-- NAVBAR -->
     <nav>
         <img src="assets/logo-black.svg" alt="Edusogno">
     </nav>
 
+    <!-- MAIN CONTENT -->
     <main>
         <h1>Benvenuto in Edusogno</h1>
 
