@@ -5,6 +5,10 @@ h1 {
   color: #134077;
 }
 
+main {
+  height: calc(100vh - 150px);
+}
+
 .links {
   display: flex;
   padding-top: 3rem;
