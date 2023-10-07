@@ -49,6 +49,4 @@ if (mysqli_num_rows($table_check_result) == 0) {
         die("Errore durante l'inserimento dei dati nella tabella 'eventi': " . mysqli_error($conn));
     }
 }
-
-mysqli_close($conn); // Chiudi la connessione al database
 ?>
