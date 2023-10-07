@@ -1,6 +1,8 @@
 <?php
 require_once 'assets/db/database.php';
+include 'migrate_database.php';
 
+// Verifica se il modulo è stato inviato
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -23,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($insert_result) {
             // Registrazione riuscita
-            include 'migrate_database.php'; // Esegui la migrazione del database
             header('Location: login.php'); // Reindirizza alla pagina di login
             exit();
         } else {

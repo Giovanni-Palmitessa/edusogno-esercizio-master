@@ -48,10 +48,6 @@ if (mysqli_num_rows($table_check_result) == 0) {
     if (!mysqli_query($conn, $insert_eventi_data)) {
         die("Errore durante l'inserimento dei dati nella tabella 'eventi': " . mysqli_error($conn));
     }
-
-    echo "Migrazione completata con successo!";
-} else {
-    echo "Le tabelle esistono già nel database, nessuna migrazione necessaria.";
 }
 
 mysqli_close($conn); // Chiudi la connessione al database
